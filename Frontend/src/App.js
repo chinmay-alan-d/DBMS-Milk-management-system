@@ -1,3 +1,4 @@
+// import { Login } from '@mui/icons-material';
 import
 { BrowserRouter ,
   Routes,
@@ -5,14 +6,14 @@ import
 } from 'react-router-dom';
 import { AdminAuthProvider } from './adminContext/adminLoginContext';
 import { AuthProvider } from './Context/LoginContext';
-import { Restrict } from './Context/Restrict';
-import Admin from './pages/admin';
-import AdminLogin from './pages/adminLogin';
-import Adminsignup from './pages/adminSignup';
+import { AdminRestrict, Restrict } from './Context/Restrict';
 import Booking from './pages/booking';
-import Login from './pages/login';
-import Signup from './pages/signup';
-import Update from './pages/update';
+import Imports from './pages/imports';
+import Login from './pages/login'
+import Seller from './pages/seller';
+import Sellerlogin from './pages/sellerlogin';
+import Sellersignup from './pages/sellersignup';
+import Signup from './pages/signup'
 
 function App() {
   return (
@@ -21,13 +22,13 @@ function App() {
         <AuthProvider>
           <BrowserRouter>
             <Routes>
-              <Route path='/adminlogin' element={<AdminLogin/>}></Route>
-              <Route path='/adminsignup' element={<Adminsignup/>}></Route>
-              <Route path='/' element={<Restrict><Booking/></Restrict>}></Route>
-              <Route path='/admin' element={<Admin/>}></Route>
-              <Route path='/signup' element={<Signup/>}></Route>
+              <Route path='/' element={<Restrict><Booking /></Restrict>}></Route>
               <Route path='/login' element={<Login/>}></Route>
-              <Route path='/update' element={<Restrict><Update /></Restrict>}></Route>
+              <Route path='/signup' element={<Signup/>}></Route>
+              <Route path='/sellerlogin' element={<Sellerlogin/>}></Route>
+              <Route path='/sellersignup' element={<Sellersignup/>}></Route>
+              <Route path='/seller' element={<AdminRestrict><Seller/></AdminRestrict>}></Route>
+              <Route path='/import' element={<AdminRestrict><Imports/></AdminRestrict>}></Route>
             </Routes>
           </BrowserRouter>
         </AuthProvider>

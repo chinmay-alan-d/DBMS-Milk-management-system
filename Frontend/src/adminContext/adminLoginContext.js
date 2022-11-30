@@ -8,7 +8,7 @@ export const AdminAuthProvider = ({children}) =>{
     const LoginAdminId = (admin_id)=>{
         setadminid(admin_id)
     }
-
+// 9
     return(
         <AdminAuthContext.Provider value={{admin_id,LoginAdminId}}>
             {children}

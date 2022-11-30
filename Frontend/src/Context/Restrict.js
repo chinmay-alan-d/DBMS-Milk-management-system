@@ -8,3 +8,11 @@ export const Restrict = ({children}) =>{
     }
     return children
 }
+
+export const AdminRestrict = ({children}) =>{
+    const auth = useAuth();
+    if(!auth.adminid){
+        return <Navigate to="/sellerlogin"/>
+    }
+    return children
+}
